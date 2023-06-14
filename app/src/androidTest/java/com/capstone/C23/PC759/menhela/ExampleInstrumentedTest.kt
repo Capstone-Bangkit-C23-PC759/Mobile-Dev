@@ -1,4 +1,4 @@
-package com.capstone.C23.PC759.menhela
+package com.capstone.c23.pc759.menhela
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.capstone.C23.PC759.menhela", appContext.packageName)
+        assertEquals("com.capstone.c23.pc759.menhela", appContext.packageName)
     }
 }

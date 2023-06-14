@@ -1,4 +1,4 @@
-package com.capstone.C23.PC759.menhela
+package com.capstone.c23.pc759.menhela
 
 import org.junit.Test
 
