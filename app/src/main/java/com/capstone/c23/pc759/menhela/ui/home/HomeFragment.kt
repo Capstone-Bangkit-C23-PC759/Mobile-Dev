@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.capstone.c23.pc759.menhela.R
 import com.capstone.c23.pc759.menhela.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -22,17 +23,27 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+        // Mengubah teks pada TextView dengan ID textView4
+        binding.textView4.text = "For you"
+
         return root
+
+
+//        val homeViewModel =
+//            ViewModelProvider(this).get(HomeViewModel::class.java)
+//
+//        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+//        val root: View = binding.root
+//
+//        val textView: TextView = binding.textView4
+//        homeViewModel.text.observe(viewLifecycleOwner) {
+//            textView.text = it
+//        }
+//        return root
     }
 
     override fun onDestroyView() {
