@@ -14,6 +14,7 @@ class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
 
+
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -27,23 +28,7 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        // Mengubah teks pada TextView dengan ID textView4
-        binding.textView4.text = "For you"
-
         return root
-
-
-//        val homeViewModel =
-//            ViewModelProvider(this).get(HomeViewModel::class.java)
-//
-//        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-//        val root: View = binding.root
-//
-//        val textView: TextView = binding.textView4
-//        homeViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
-//        return root
     }
 
     override fun onDestroyView() {

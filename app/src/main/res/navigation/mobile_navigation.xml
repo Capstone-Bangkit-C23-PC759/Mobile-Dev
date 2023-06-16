@@ -12,13 +12,13 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_article"
         android:name="com.capstone.c23.pc759.menhela.ui.dashboard.ArticleFragment"
         android:label="@string/title_article"
         tools:layout="@layout/fragment_article" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_user"
         android:name="com.capstone.c23.pc759.menhela.ui.notifications.UserFragment"
         android:label="@string/title_user"
         tools:layout="@layout/fragment_user" />
