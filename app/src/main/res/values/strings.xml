@@ -3,4 +3,13 @@
     <string name="title_home">Home</string>
     <string name="title_article">Artikel</string>
     <string name="title_user">Profil</string>
+
+    <string name="title_article1">OCD</string>
+    <string name="title_article2">Anxiety</string>
+    <string name="title_article3">Depression</string>
+
+    <string name="subtitle_article1">Obsessive Compulsive Disorder</string>
+    <string name="subtitle_article2">kecemasan berlebih</string>
+    <string name="subtitle_article3">Gangguan terhadap mental tertekan</string>
+
 </resources>

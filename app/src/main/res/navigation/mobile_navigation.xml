@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_article"
-        android:name="com.capstone.c23.pc759.menhela.ui.dashboard.ArticleFragment"
+        android:name="com.capstone.c23.pc759.menhela.ui.article.ArticleFragment"
         android:label="@string/title_article"
         tools:layout="@layout/fragment_article" />
 

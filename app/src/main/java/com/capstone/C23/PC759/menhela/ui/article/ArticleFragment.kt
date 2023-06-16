@@ -1,42 +1,46 @@
-package com.capstone.c23.pc759.menhela.ui.dashboard
+package com.capstone.c23.pc759.menhela.ui.article
 
+import ArticleAdapter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.capstone.c23.pc759.menhela.databinding.FragmentArticleBinding
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.capstone.c23.pc759.menhela.R
 
 class ArticleFragment : Fragment() {
-
-    private var _binding: FragmentArticleBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var articleAdapter: ArticleAdapter
+    private val articleList = mutableListOf<Article>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val articleViewModel =
-            ViewModelProvider(this).get(ArticleViewModel::class.java)
-
-        _binding = FragmentArticleBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textDashboard
-        articleViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+        val root = inflater.inflate(R.layout.fragment_article, container, false)
+        recyclerView = root.findViewById(R.id.rv_article) // Mengubah ID menjadi rv_article
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        articleAdapter = ArticleAdapter(articleList)
+        recyclerView.adapter = articleAdapter
         return root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        // Panggil fungsi untuk mengisi data artikel ke dalam articleList
+        populateArticleList()
+        // Panggil fungsi untuk memperbarui tampilan RecyclerView
+        articleAdapter.notifyDataSetChanged()
+    }
+
+    private fun populateArticleList() {
+        // Contoh pengisian data artikel (ganti dengan sumber data Anda)
+        articleList.add(Article("Judul Artikel 1", "Deskripsi Artikel 1",R.drawable.sit))
+        articleList.add(Article("Judul Artikel 2", "Deskripsi Artikel 2",R.drawable.talk))
+        articleList.add(Article("Judul Artikel 3", "Deskripsi Artikel 3",R.drawable.walk))
+        // Tambahkan artikel lainnya sesuai kebutuhan
     }
 }
